@@ -1,4 +1,4 @@
-.registration {
+.authorization {
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -9,7 +9,7 @@
     align-self: center;
     margin-top: 100px;
 
-    .registration_header {
+    .authorization_header {
         font-size: 30px;
         font-weight: 700;
     }
