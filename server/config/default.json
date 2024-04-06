@@ -1,5 +1,6 @@
 {
     "serverPort": 3000,
     "dbUrl": "mongodb+srv://urdearyen:11040808V@cloud.js7gbuf.mongodb.net/?retryWrites=true&w=majority&appName=cloud",
-    "secretKey": "mern-secret-key"
+    "secretKey": "mern-secret-key",
+    "filePath": "/Users/ekaterinaorlova/RESUME/cloud-disk/server/files/"
 }
