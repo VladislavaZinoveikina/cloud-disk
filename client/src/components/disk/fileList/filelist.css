@@ -1,0 +1,20 @@
+.filelist {
+    margin: 20px 0;
+}
+
+.filelist #header {
+    display: grid;
+    grid-template-columns: 1fr 4fr repeat(4, 1fr);
+}
+
+.filelist__header #name {
+    grid-column-start: 2;
+}
+.filelist__header #date {
+    grid-column-start: 5;
+    justify-self: center;
+}
+.filelist__header #size {
+    grid-column-start: 6;
+    justify-self: center;
+}
