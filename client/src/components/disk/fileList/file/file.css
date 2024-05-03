@@ -20,3 +20,22 @@
     grid-column-start: 6;
     justify-self: center;
 }
+
+.file__btn {
+    display: none;
+}
+
+.file__date:hover {
+    grid-column-start: 3;
+}
+.file__size:hover {
+    grid-column-start: 4;
+}
+.file__download:hover {
+    grid-column-start: 5;
+    display: block;
+}
+.file__delete:hover {
+    grid-column-start: 6;
+    display: block;
+}
