@@ -22,6 +22,11 @@ const File = ({file}) => {
         downloadFile(file)
     }
 
+    function deleteClickHandler(e) {
+        e.stopPropagation()
+        dispatch(deleteFile(file))
+    }
+
 
     return (
         <div className="file" onClick={() => openDirHandler(file)}>
@@ -30,7 +35,7 @@ const File = ({file}) => {
             <div className="file__date" id="date">{file.date.slice(0,10)}</div>
             <div className="file__size" id="size">{file.size}</div>
             {file.type !== 'dir' && <button onClick={(e) => downloadClickHandler(e)} className="file__btn file__download">Download</button>}
-            <button className="file__btn file__delete">Delete</button>
+            <button onClick={(e) => deleteClickHandler(e)} className="file__btn file__delete">Delete</button>
         </div>
     );
 };
