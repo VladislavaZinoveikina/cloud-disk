@@ -10,6 +10,7 @@ import Uploader from "../uploader/Uploader";
 const Disk = () => {
     const dispatch = useDispatch();
     const currentDir = useSelector(state => state.files.currentDir);
+    const loader = useSelector(state => state.app.loader);
     const dirStack = useSelector(state => state.files.currentDir);
     const [dragEnter, setDragEnter] = useState(false);
     const [sort, setSort] = useState('type');
@@ -50,6 +51,14 @@ const Disk = () => {
         let files = [...event.dataTransfer.files];
         files.forEach(file => dispatch(uploadFile(file, currentDir)));
         setDragEnter(files)
+    }
+
+    if(loader) {
+        return (
+            <div className="loader__block">
+                <div class="loader"></div>
+            </div>
+        )
     }
 
     return ( !dragEnter ?
