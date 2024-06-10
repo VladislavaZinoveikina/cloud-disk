@@ -7,6 +7,7 @@ import Login from './authorization/Login';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../actions/user';
 import Disk from './disk/Disk';
+import Profile from './profile/Profile';
 
 function App() {
   const isAuth = useSelector(state => state.user.isAuth);
@@ -14,7 +15,7 @@ function App() {
 
   useEffect(() => {
     dispatch(auth())
-  }, []);
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
@@ -22,12 +23,20 @@ function App() {
         <Navbar/>
         <div className='wrap'>
         <Routes>
-            <Route path="" element={isAuth ? <Navigate to="disk" /> : <Login />} />
-            <Route path="registration" element={<Registration />} />
-            <Route path="login" element={<Login />} />
-            <Route path="disk" element={isAuth ? <Disk /> : <Navigate to="" />} />
+        {!isAuth ? (
+          <>
+           <Route path="/registration" element={<Registration />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<Navigate to="/login" />} />
+            </>
+              ) : (
+            <>
+              <Route path="/" element={<Disk />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </>
+                )}
           </Routes>
-
         </div>
       </div>
     </BrowserRouter>

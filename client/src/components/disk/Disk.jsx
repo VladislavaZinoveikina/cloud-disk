@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createDir, getFiles, uploadFile } from "../../actions/file";
+import { getFiles, uploadFile } from "../../actions/file";
 import FileList from "./fileList/FileList";
 import './disk.css';
 import Popup from "./Popup";
@@ -70,7 +70,8 @@ const Disk = () => {
                         <label htmlFor="disk__upload-input" className="disk__upload-label">Upload file</label>
                         <input multiple={true} onChange={(event) => fileUploadHandler(event)} type="file" id="disk__upload-input" className="disk__upload-input"/>
                     </div>
-                    <select value={sort} onChange={(e) => setSort(e.target.value)} 
+                    <select value={sort} 
+                    onChange={(e) => setSort(e.target.value)} 
                     className="disk__select">
                         <option value="name">By name</option>
                         <option value="type">By type</option>

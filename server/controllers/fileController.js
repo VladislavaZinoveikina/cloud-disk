@@ -47,7 +47,7 @@ class FileController {
                     files = await File.find({user: req.user.id, parent: req.query.parent})
                     break;
             }
-            return res.join(files)
+            return res.json(files)
         } catch (e) {
             console.log(e);
             return res.status(500).json({message: "Cannot get files"})                   

@@ -1,6 +1,6 @@
 import {applyMiddleware, combineReducers} from "redux";
 import {compose} from "redux";
-import thunk from "redux-thunk";
+import { thunk } from "redux-thunk";
 import userReducer from "./userReducer";
 import fileReducer from "./fileReducer";
 import { legacy_createStore as createStore} from 'redux';

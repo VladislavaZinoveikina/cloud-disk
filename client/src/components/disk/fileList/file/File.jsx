@@ -4,7 +4,7 @@ import dirLogo from '../../../../assets/img/dir.png';
 import fileLogo from '../../../../assets/img/file.png';
 import { useDispatch, useSelector } from "react-redux";
 import { pushToStack, setCurrentDir } from "../../../../reducers/fileReducer";
-import { downloadFile } from "../../../../actions/file";
+import { deleteFile, downloadFile } from "../../../../actions/file";
 import sizeFormat from "../../../../utils/sizeFormat";
 
 const File = ({file}) => {
